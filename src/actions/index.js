@@ -16,3 +16,21 @@ export const heroesFetchingError = () => {
         type: 'HEROES_FETCHING_ERROR'
     }
 }
+export const heroesDeleting = () => {
+    return {
+        type: 'HEROES_DELETING'
+    }
+}
+
+export const heroesDeleted = (heroes) => {
+    return {
+        type: 'HEROES_DELETED',
+        payload: heroes
+    }
+}
+
+export const heroesDeletingError = () => {
+    return {
+        type: 'HEROES_DELETING_ERROR'
+    }
+}
