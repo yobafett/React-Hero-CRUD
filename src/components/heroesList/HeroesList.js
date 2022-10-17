@@ -45,9 +45,6 @@ const HeroesList = () => {
             })
             .then(() => dispatch(heroesDeleted()))
             .catch(() => dispatch(heroesDeletingError()))
-
-        // const newHeroes = heroes.filter(item => item.id !== id);
-        // dispatch(heroesDeleted(newHeroes));
     }
 
     const renderHeroesList = (arr) => {

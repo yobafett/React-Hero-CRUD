@@ -3,7 +3,7 @@ const HeroesListItem = ({ name, description, element, deleteHero }) => {
 
     let elementClassName;
 
-    switch (element) {
+    switch (element.name) {
         case 'fire':
             elementClassName = 'bg-danger bg-gradient';
             break;
