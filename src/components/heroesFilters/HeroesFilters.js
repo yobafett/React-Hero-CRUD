@@ -46,7 +46,7 @@ const HeroesFilters = () => {
             const classes = classNames({
                 'btn': true,
                 [btnClass]: true,
-                'active': name == activeFilter
+                'active': name === activeFilter
             });
             return (
                 <button

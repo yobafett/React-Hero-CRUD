@@ -1,3 +1,4 @@
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { useHttp } from '../../hooks/http.hook';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -56,14 +57,24 @@ const HeroesList = () => {
             return activeFilter === "all" ? true
                 : element === activeFilter;
         }).map(({ id, ...props }) => {
-            return <HeroesListItem deleteHero={() => deleteChar(id)} key={id} {...props} />
+            return (
+                <CSSTransition
+                    key={id}
+                    timeout={500}
+                    classNames="item"
+                >
+                    <HeroesListItem deleteHero={() => deleteChar(id)} {...props} />
+                </CSSTransition>
+            )
         })
     }
 
     const elements = renderHeroesList(heroes);
     return (
         <ul>
-            {elements}
+            <TransitionGroup>
+                {elements}
+            </TransitionGroup>
         </ul>
     )
 }
