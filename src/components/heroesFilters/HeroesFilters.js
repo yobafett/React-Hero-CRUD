@@ -33,14 +33,29 @@ const HeroesFilters = () => {
         return <h5 className="text-center mt-5">Ошибка загрузки</h5>
     }
 
+    const setActiveFilter = (filterName) => {
+        dispatch(activeFilterSet(filterName));
+    }
+
     const renderFiltersList = (arr) => {
         if (arr.length === 0) {
             return null;
         }
 
         return arr.map(({ id, name, rus, btnClass }) => {
-            const classes = classNames(['btn', btnClass]);
-            return <button key={id} className={classes} value={name}>{rus}</button>
+            const classes = classNames({
+                'btn': true,
+                [btnClass]: true,
+                'active': name == activeFilter
+            });
+            return (
+                <button
+                    key={id}
+                    className={classes}
+                    onClick={() => setActiveFilter(name)}>
+                    {rus}
+                </button>
+            );
         })
     }
 
@@ -57,11 +72,5 @@ const HeroesFilters = () => {
         </div>
     )
 }
-
-{/* <button className="btn btn-outline-dark active">Все</button>
-<button className="btn btn-danger">Огонь</button>
-<button className="btn btn-primary">Вода</button>
-<button className="btn btn-success">Ветер</button>
-<button className="btn btn-secondary">Земля</button> */}
 
 export default HeroesFilters;

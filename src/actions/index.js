@@ -74,9 +74,9 @@ export const heroesAddingError = () => {
     }
 }
 
-export const activeFilterSet = (filter) => {
+export const activeFilterSet = (filterName) => {
     return {
         type: 'ACTION_FILTER_SETTING',
-        payload: filter.name
+        payload: filterName
     }
 }
