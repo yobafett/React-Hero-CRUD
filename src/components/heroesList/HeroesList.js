@@ -1,6 +1,6 @@
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { useHttp } from '../../hooks/http.hook';
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
@@ -25,17 +25,10 @@ const HeroesList = () => {
         request("http://localhost:3001/heroes")
             .then(data => dispatch(heroesFetched(data)))
             .catch(() => dispatch(heroesFetchingError()))
-
         // eslint-disable-next-line
     }, []);
 
-    if (heroesLoadingStatus === "loading") {
-        return <Spinner />;
-    } else if (heroesLoadingStatus === "error") {
-        return <h5 className="text-center mt-5">Ошибка загрузки</h5>
-    }
-
-    const deleteChar = (id) => {
+    const deleteChar = useCallback((id) => {
         dispatch(heroesDeleting());
         request(`http://localhost:3001/heroes/${id}`, 'DELETE')
             .then(() => {
@@ -46,6 +39,12 @@ const HeroesList = () => {
             })
             .then(() => dispatch(heroesDeleted()))
             .catch(() => dispatch(heroesDeletingError()))
+    }, [request]);
+
+    if (heroesLoadingStatus === "loading") {
+        return <Spinner />;
+    } else if (heroesLoadingStatus === "error") {
+        return <h5 className="text-center mt-5">Ошибка загрузки</h5>
     }
 
     const renderHeroesList = (arr) => {

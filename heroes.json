@@ -7,9 +7,15 @@
       "element": "fire"
     },
     {
-      "id": 2,
-      "name": "Неизвестный герой",
-      "description": "Скрывающийся в тени",
+      "id": "bdbff859-0fa3-4064-a78c-37e537ae388b",
+      "name": "sadasd",
+      "description": "sadasda",
+      "element": "wind"
+    },
+    {
+      "id": "5d67fd0c-116d-4def-af0c-da95b1a8317c",
+      "name": "sadasd",
+      "description": "sadasdasdasd",
       "element": "wind"
     }
   ],

@@ -78,8 +78,11 @@ const HeroesAddForm = () => {
             return null;
         }
 
-        return arr.filter(({name}) => name !== 'all').map(({ id, name, rus }) => {
-            return <option key={id} value={name}>{rus}</option>
+        return arr.map(({ id, name, rus }) => {
+            if (name === 'all') {
+                return;
+            }
+            return <option key={id} value={name}>{rus}</option>;
         })
     }
 
