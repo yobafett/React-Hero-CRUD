@@ -54,3 +54,22 @@ export const filtersFetchingError = () => {
         type: 'FILTERS_FETCHING_ERROR'
     }
 }
+
+export const heroesAdding = () => {
+    return {
+        type: 'HEROES_ADDING'
+    }
+}
+
+export const heroesAdded = (heroes) => {
+    return {
+        type: 'HEROES_ADDED',
+        payload: heroes
+    }
+}
+
+export const heroesAddingError = () => {
+    return {
+        type: 'HEROES_ADDING_ERROR'
+    }
+}

@@ -54,6 +54,22 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 filtersLoadingStatus: 'error'
             }
+        case 'HEROES_ADDING':
+            return {
+                ...state,
+                heroesLoadingStatus: 'loading'
+            }
+        case 'HEROES_ADDED':
+            return {
+                ...state,
+                heroes: action.payload,
+                heroesLoadingStatus: 'idle'
+            }
+        case 'HEROES_ADDING_ERROR':
+            return {
+                ...state,
+                heroesLoadingStatus: 'error'
+            }
         default: return state
     }
 }

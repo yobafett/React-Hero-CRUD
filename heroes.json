@@ -1,49 +1,61 @@
 {
-    "heroes": [
-        {
-            "id": 1,
-            "name": "Первый герой",
-            "description": "Первый герой в рейтинге!",
-            "element": "fire"
-        },
-        {
-            "id": 2,
-            "name": "Неизвестный герой",
-            "description": "Скрывающийся в тени",
-            "element": "wind"
-        },
-        {
-            "id": 3,
-            "name": "Морской герой",
-            "description": "Как аквамен, но не из DC",
-            "element": "water"
-        }
-    ],
-    "filters": [
-        {
-            "id": 0,
-            "name": "all",
-            "rus": "Все"
-        },
-        {
-            "id": 1,
-            "name": "fire",
-            "rus": "Огонь"
-        },
-        {
-            "id": 2,
-            "name": "water",
-            "rus": "Вода"
-        },
-        {
-            "id": 3,
-            "name": "wind",
-            "rus": "Ветер"
-        },
-        {
-            "id": 4,
-            "name": "earth",
-            "rus": "Земля"
-        }
-    ]
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Первый герой",
+      "description": "Первый герой в рейтинге!",
+      "element": "fire"
+    },
+    {
+      "id": 2,
+      "name": "Неизвестный герой",
+      "description": "Скрывающийся в тени",
+      "element": "wind"
+    },
+    {
+      "id": "0737c6bc-9bbe-4c04-97b3-30e1b99e20e5",
+      "name": "logan",
+      "description": "sdaasd",
+      "element": "water"
+    },
+    {
+      "id": "d429f3ee-58b7-4f11-a0b4-383c2c5925b3",
+      "name": "star",
+      "description": "asd",
+      "element": "water"
+    },
+    {
+      "id": "b39cf5c2-105b-484e-98ee-9b2d16a55675",
+      "name": "Gambit",
+      "description": "asd",
+      "element": "wind"
+    }
+  ],
+  "filters": [
+    {
+      "id": 0,
+      "name": "all",
+      "rus": "Все"
+    },
+    {
+      "id": 1,
+      "name": "fire",
+      "rus": "Огонь"
+    },
+    {
+      "id": 2,
+      "name": "water",
+      "rus": "Вода"
+    },
+    {
+      "id": 3,
+      "name": "wind",
+      "rus": "Ветер"
+    },
+    {
+      "id": 4,
+      "name": "earth",
+      "rus": "Земля"
+    }
+  ]
 }
