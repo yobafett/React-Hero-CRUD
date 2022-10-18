@@ -29,33 +29,44 @@
       "name": "Gambit",
       "description": "asd",
       "element": "wind"
+    },
+    {
+      "id": "08e027be-50c3-4f1d-9c50-7ec28334a737",
+      "name": "sadas",
+      "description": "sadasd",
+      "element": "earth"
     }
   ],
   "filters": [
     {
       "id": 0,
       "name": "all",
-      "rus": "Все"
+      "rus": "Все",
+      "btnClass": "btn-outline-dark"
     },
     {
       "id": 1,
       "name": "fire",
-      "rus": "Огонь"
+      "rus": "Огонь",
+      "btnClass": "btn-danger"
     },
     {
       "id": 2,
       "name": "water",
-      "rus": "Вода"
+      "rus": "Вода",
+      "btnClass": "btn-primary"
     },
     {
       "id": 3,
       "name": "wind",
-      "rus": "Ветер"
+      "rus": "Ветер",
+      "btnClass": "btn-success"
     },
     {
       "id": 4,
       "name": "earth",
-      "rus": "Земля"
+      "rus": "Земля",
+      "btnClass": "btn-secondary"
     }
   ]
 }
