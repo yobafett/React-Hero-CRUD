@@ -7,48 +7,37 @@
       "element": "fire"
     },
     {
-      "id": "bdbff859-0fa3-4064-a78c-37e537ae388b",
-      "name": "sadasd",
-      "description": "sadasda",
-      "element": "wind"
-    },
-    {
-      "id": "5d67fd0c-116d-4def-af0c-da95b1a8317c",
-      "name": "sadasd",
-      "description": "sadasdasdasd",
-      "element": "wind"
+      "id": "a15453d8-378b-4794-8c30-5b551e05508b",
+      "name": "Gambit",
+      "description": "asd",
+      "element": "water"
     }
   ],
   "filters": [
     {
-      "id": 0,
       "name": "all",
-      "rus": "Все",
-      "btnClass": "btn-outline-dark"
+      "label": "Все",
+      "className": "btn-outline-dark"
     },
     {
-      "id": 1,
       "name": "fire",
-      "rus": "Огонь",
-      "btnClass": "btn-danger"
+      "label": "Огонь",
+      "className": "btn-danger"
     },
     {
-      "id": 2,
       "name": "water",
-      "rus": "Вода",
-      "btnClass": "btn-primary"
+      "label": "Вода",
+      "className": "btn-primary"
     },
     {
-      "id": 3,
       "name": "wind",
-      "rus": "Ветер",
-      "btnClass": "btn-success"
+      "label": "Ветер",
+      "className": "btn-success"
     },
     {
-      "id": 4,
       "name": "earth",
-      "rus": "Земля",
-      "btnClass": "btn-secondary"
+      "label": "Земля",
+      "className": "btn-secondary"
     }
   ]
 }
