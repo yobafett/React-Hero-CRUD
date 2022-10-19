@@ -1,22 +1,16 @@
-import classNames from "classnames";
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { activeFilterSet, filtersFetching, filtersFetched, filtersFetchingError } from '../../actions';
-import { useHttp } from "../../hooks/http.hook";
+import {useHttp} from '../../hooks/http.hook';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import classNames from 'classnames';
 
-import Spinner from "../spinner/Spinner";
-
-// Задача для этого компонента:
-// Фильтры должны формироваться на основании загруженных данных
-// Фильтры должны отображать только нужных героев при выборе
-// Активный фильтр имеет класс active
-// Изменять json-файл для удобства МОЖНО!
-// Представьте, что вы попросили бэкенд-разработчика об этом
+import { filtersFetching, filtersFetched, filtersFetchingError, activeFilterChanged } from '../../actions';
+import Spinner from '../spinner/Spinner';
 
 const HeroesFilters = () => {
-    const { activeFilter, filters, filtersLoadingStatus } = useSelector(state => state);
+
+    const {filters, filtersLoadingStatus, activeFilter} = useSelector(state => state.filters);
     const dispatch = useDispatch();
-    const { request } = useHttp();
+    const {request} = useHttp();
 
     useEffect(() => {
         dispatch(filtersFetching());
@@ -28,38 +22,32 @@ const HeroesFilters = () => {
     }, []);
 
     if (filtersLoadingStatus === "loading") {
-        return <Spinner />;
+        return <Spinner/>;
     } else if (filtersLoadingStatus === "error") {
         return <h5 className="text-center mt-5">Ошибка загрузки</h5>
     }
 
-    const setActiveFilter = (filterName) => {
-        dispatch(activeFilterSet(filterName));
-    }
-
-    const renderFiltersList = (arr) => {
+    const renderFilters = (arr) => {
         if (arr.length === 0) {
-            return null;
+            return <h5 className="text-center mt-5">Фильтры не найдены</h5>
         }
 
-        return arr.map(({ id, name, rus, btnClass }) => {
-            const classes = classNames({
-                'btn': true,
-                [btnClass]: true,
+        return arr.map(({name, className, label}) => {
+
+            const btnClass = classNames('btn', className, {
                 'active': name === activeFilter
             });
-            return (
-                <button
-                    key={id}
-                    className={classes}
-                    onClick={() => setActiveFilter(name)}>
-                    {rus}
-                </button>
-            );
+            
+            return <button 
+                        key={name} 
+                        id={name} 
+                        className={btnClass}
+                        onClick={() => dispatch(activeFilterChanged(name))}
+                        >{label}</button>
         })
     }
 
-    const elements = renderFiltersList(filters);
+    const elements = renderFilters(filters);
 
     return (
         <div className="card shadow-lg mt-4">
