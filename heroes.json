@@ -7,9 +7,15 @@
       "element": "fire"
     },
     {
-      "id": "a15453d8-378b-4794-8c30-5b551e05508b",
-      "name": "Gambit",
-      "description": "asd",
+      "id": 2,
+      "name": "Неизвестный герой",
+      "description": "Скрывающийся в тени",
+      "element": "wind"
+    },
+    {
+      "id": 3,
+      "name": "Морской герой",
+      "description": "Как аквамен, но не из DC",
       "element": "water"
     }
   ],
